@@ -1,10 +1,10 @@
-/* ------------------------------------------------------
-
+/* 
 	TAGGING: Devices and Application Categorisation
 
-	This tagging definition labels interactions with information relating to a users device and application. This definition is most effective when used with the Twitter and Bitly data sources.
-
-  ------------------------------------------------------- */
+	This tagging definition labels interactions with information relating to
+	a users device and application. This definition is most effective when 
+	used with the Twitter and Bitly data sources.
+*/
 
 
 /* 
