@@ -1,0 +1,67 @@
+/* 
+   Name of device 
+
+   NOTE: This tag set gives a broad classication of a device, rather than a specific model. 
+*/
+tag.device.name "iPhone" { facebook.application contains "iPhone" OR bitly.user.agent substr "iPhone" OR interaction.source contains "iPhone" }
+tag.device.name "iPad" { facebook.application contains "iPad" OR bitly.user.agent substr "iPad" OR interaction.source contains "iPad" }
+tag.device.name "iPod" { facebook.application contains "iPod" OR bitly.user.agent substr "iPod" OR interaction.source contains "iPod" }
+tag.device.name "Blackberry" { facebook.application contains "Blackberry" OR bitly.user.agent substr "Blackberry" OR interaction.source substr "Blackberry" }
+tag.device.name "Android" { facebook.application contains "Android" OR bitly.user.agent substr "Android" OR interaction.source contains_any "Android, Tweedle" }
+
+/* Operating system */
+tag.device.os "iOS" { facebook.application contains_any "iPhone,iPad,iPod" OR bitly.user.agent substr "iPhone" OR bitly.user.agent substr "iPad" OR bitly.user.agent substr "iPod" OR bitly.user.agent substr "iOS" OR interaction.source contains_any "iOS,iPhone,iPod,iPad" }
+tag.device.os "Blackberry" { facebook.application contains "Blackberry" OR bitly.user.agent substr "Blackberry" OR interaction.source substr "Blackberry" }
+tag.device.os "Bada" { bitly.user.agent substr "Bada" OR interaction.source contains "Bada" OR interaction.source substr "Bada" }
+tag.device.os "Windows" {  bitly.user.agent substr "MSIE" OR bitly.user.agent substr "Windows" OR interaction.source contains_any "Windows" }
+tag.device.os "Mac" { bitly.user.agent substr "OS X" OR interaction.source contains_any "OS X,Mac" }
+tag.device.os "Linux" { bitly.user.agent substr "Linux" OR interaction.source contains_any "OS X,Mac" }
+tag.device.os "Android" { facebook.application contains "Android" OR bitly.user.agent substr "Android" OR interaction.source contains_any "Android, Tweedle" }
+
+/* Format (desktop, mobile, tablet) 
+
+   NOTE: Here we assume mobile if we find Blackberry, based on Blackberry Playbook low sales
+*/
+tag.device.format "Mobile" { facebook.application contains_any "Blackberry,Mobile" OR bitly.user.agent substr "Blackberry" OR bitly.user.agent substr "Mobile" OR bitly.user.agent substr "iPhone" OR bitly.user.agent substr "iPod" OR interaction.source contains_any "iPhone,iPod, mobile web, phone, Blackberry" }
+tag.device.format "Tablet" { bitly.user.agent substr "iPad" OR interaction.source contains "iPad" }
+tag.device.format "Desktop" { interaction.source contains_any "web, Tweet Button, Twitter for Mac, Tweet for Web" and not interaction.source contains "mobile" }
+
+/* Manufacturer of device (e.g. Sony, Apple, Samsung, Nokia etc) */
+tag.device.manufacturer "Apple" { bitly.user.agent substr "OS X" OR bitly.user.agent substr "Macintosh" OR bitly.user.agent contains "os x" OR bitly.user.agent substr "iPhone" OR bitly.user.agent substr "iPad" OR bitly.user.agent substr "iPod" OR interaction.source contains_any "iPhone,iPod,iPad,OS X,Mac" }
+tag.device.manufacturer "Samsung" { bitly.user.agent substr "Samsung" OR bitly.user.agent substr "Bada" OR interaction.source contains "Bada" OR interaction.source substr "Bada" }
+tag.device.manufacturer "Sony" { bitly.user.agent substr "Sony" }
+tag.device.manufacturer "Nokia" { facebook.application contains "Nokia" OR bitly.user.agent substr "Nokia" }
+tag.device.manufacturer "ZTE" { bitly.user.agent substr "ZTE" }
+tag.device.manufacturer "Huawei" { bitly.user.agent substr "Huawei" }
+tag.device.manufacturer "HTC" { bitly.user.agent substr "HTC" }
+tag.device.manufacturer "Blackberry" { facebook.application contains "Blackberry" OR bitly.user.agent substr "Blackberry" OR interaction.source substr "Blackberry" }
+
+/* Application used by user */
+tag.application.name "Janetter" { interaction.source contains "Janetter" }
+tag.application.name "Hootsuite" { interaction.source contains "Hootsuite" }
+tag.application.name "TweetDeck" { interaction.source contains "Tweetdeck" }
+tag.application.name "TweetCaster" { interaction.source contains "TweetCaster" }
+tag.application.name "Instagram" { interaction.source contains "Instagram" }
+tag.application.name "Ubersocial" { interaction.source contains "Ubersocial" }
+tag.application.name "Echofon" { interaction.source contains "Echofon" }
+tag.application.name "Facebook" { interaction.source contains "Facebook" }
+tag.application.name "Twittbot" { interaction.source substr "twittbot" }
+tag.application.name "Tweetbot" { interaction.source contains "Tweetbot" }
+tag.application.name "Roundteam" { interaction.source contains "Roundteam" }
+tag.application.name "Twicca" { interaction.source contains "Twicca" }
+tag.application.name "Write Longer" { interaction.source contains "Write longer" }
+tag.application.name "Keitai Web" { interaction.source contains "Keitai Web" }
+tag.application.name "Tumblr" { interaction.source contains "Tumblr" }
+tag.application.name "TweetAdder" { interaction.source contains "TweetAdder" }
+tag.application.name "The Tribez" { interaction.source contains "Tribez" }
+tag.application.name "Plume" { interaction.source contains "Plume" }
+tag.application.name "Facebook" { facebook.application contains "Facebook" OR interaction.source contains "Facebook" }
+tag.application.name "Foursquare" { interaction.source contains "Foursquare" }
+tag.application.name "Pages Manager" { facebook.application contains "Pages Manager" }
+tag.application.name "Tweedle" { interaction.source contains "Tweedle" }
+tag.application.name "Chrome" { bitly.user.agent substr "Chrome" }
+tag.application.name "Firefox" { bitly.user.agent substr "Firefox" }
+tag.application.name "Safari" { bitly.user.agent substr "Safari" and not bitly.user.agent substr "Chrome" }
+
+// Twitter official applications (which mainly start with "Twitter for"
+tag.application.name "Twitter" { interaction.source contains_any "Twitter for, mobile web, twitter web" }
