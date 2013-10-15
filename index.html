@@ -1,13 +1,40 @@
 <html>
 	<head>
 		<title>Datasift - CSDL Samples Library</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="page-resources/bootstrap.min.css">
+		<link rel="stylesheet" href="page-resources/styles.css">
 	</head>
 	<body>
-		<h1>Datasift - CSDL Samples Library</h1>
-		<h2><a href="https://github.com/datasift/csdl-samples/tree/master/tagging">Tagging Definitions</a></h2>
-		<p>These definitions demonstrate typical use-cases for tagging on the Datasift platform.</p>
-		<ul>
-			<li><a href="https://github.com/datasift/csdl-samples/blob/master/tagging/device-application-classification.csdl">User device &amp; application classification</a></li>
-		</ul>
+		<div class="container">
+
+			<div class="page-header">
+			  <h1><img src="page-resources/datasift-logo.png" />CSDL Samples Library</h1>
+			</div>
+			<div class="alert alert-warning"><p>These definitions demonstrate typical use-cases for tagging on the Datasift platform. For more details on how to get started with Datasift, see our <a href="http://dev.datasift.com/">developer documentation</a>.</p></div>
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    <h2>Tagging Definitions</h2>
+				<table class="table" id="definitions-list">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Description</th>
+							<th>Applicable Data Sources</th>
+							<th>CSDL</th>
+						</tr>
+					</thead>
+					<tr>
+						<td><strong>Device &amp; Application Classification</strong></td>
+						<td>A definition that tags interactions where possible with device and application details of the interaction author.</td>
+						<td>Twitter, Bitly, Facebook</td>
+						<td><a href="https://github.com/datasift/csdl-samples/blob/master/tagging/device-application-classification.csdl">Example CSDL</a></td>
+					</tr>
+				</table>
+			  </div>
+			</div>
+			
+		</div>
+		<script src="page-resources/bootstrap.min.js"></script>
 	</body>
 </html>

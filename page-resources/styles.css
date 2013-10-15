@@ -1,0 +1,47 @@
+#definitions-list
+{
+	margin-top: 18px;
+}
+
+#definitions-list td:nth-child(1)
+{
+	width: 20%;
+}
+
+#definitions-list td:nth-child(2)
+{
+	width: 45%;
+}
+
+#definitions-list td:nth-child(3)
+{
+	width: 20%;
+}
+
+#definitions-list td:nth-child(4)
+{
+	width: 15%;
+}
+
+.page-header img 
+{
+	display: inline-block;
+	margin-right: 32px;
+	vertical-align: top;
+}
+
+.page-header h1
+{
+	font-size: 32px;
+}
+
+.panel h2
+{
+	margin: 0;
+	color: #999;
+}
+
+.container
+{
+	position: relative;
+}
